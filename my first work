@@ -1,0 +1,463 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+////////////////////////////////////////////////////////////////
+////////Our Function ////////
+double Add(double x, double y)
+{
+
+    cout << "In Add(), received " << x << " and " << y << "\n";
+    return (x + y);
+}
+///////////////////////////////////////
+double SUB(double x, double y)
+{
+
+    cout << "In Add(), received " << x << " and " << y << "\n";
+    return (x - y);
+}
+////////////////////////
+double Multiply(double x, double y)
+{
+
+    cout << "In Add(), received " << x << " and " << y << "\n";
+    return (x * y);
+}
+////////////////////////
+double Divide(double x, double y)
+{
+
+    cout << "In Add(), received " << x << " and " << y << "\n";
+    return (x / y);
+}
+////////Our Function ////////
+////////////////////////////////////////////////////////////////////
+string name;
+void Fun1()
+{
+    int index;
+    index = 1;
+    switch(index)
+    {
+        case 1:
+        cout<<"Welcome to ages Guess"<<endl;
+        cout<<"to i can Guess your age i have to know some information from you "<< name<<endl;
+        cout<<"for what year u want to guess EX: 2020 - 2030 - 2032 "<<endl;
+        cout<<"Year : ";
+        int Real_year;
+        cin>> Real_year;
+        if(Real_year >= 1000 )
+ {
+
+
+        cout << "good number"<<endl;
+ }
+else
+{
+          //  cout << "you reached the limited number" << endl;
+    for (int i = 0; i == 0;)
+    {
+        cout << "bad number try again" << endl;
+        cout << "Year : "<<endl;
+        int Real_year;
+        cin >> Real_year;
+        if (Real_year >= 1000) { i = 1; }
+
+    }
+    cout << "good number" << endl;
+    
+
+}
+cout << "for what month u want to guess EX: 1 - 12 " << endl;
+int Real_month;
+cin >> Real_month;
+
+if (Real_month >0 && Real_month <=12)
+{
+
+    cout << "good number" << endl;
+}
+else
+{
+    cout << "bad number" << endl;
+    string out;
+    cin >> out;
+    break;
+}
+cout << "for what day u want to guess EX: 1 - 31 " << endl;
+int Real_day;
+cin >> Real_day;
+
+if (Real_day > 0 && Real_day <= 31)
+{
+
+    cout << "good number" << endl;
+}
+else
+{
+    cout << "bad number" << endl;
+    string out;
+    cin >> out;
+    break;
+}
+
+        //cout<<"enter your birthday below "<<endl;
+        cout<<"Year ( what year you were born) "<<endl;
+        cout<<"Year : ";
+        int year;
+        cin>>year;
+        if(Real_year < year)
+            {
+            cout << "bad number " << endl;
+            string out;
+            cin >> out;
+            break;
+            }
+        else
+        {
+
+         cout<<"good number" << endl;
+         
+        }
+        cout<<"Month ( what month you were born) "<<endl;
+        cout<<"Month : ";
+        int month;
+        cin>>month;
+        if (month > 0 && month <=12)
+        {
+            cout << "good number" << endl;
+        }
+        else
+        {
+            //string here;
+            cout << "bad number " << endl;
+            string out;
+            cin >> out;
+            break;
+        }
+        cout<<"Day ( what day you were born) "<<endl;
+        cout<<"Day : ";
+        int day;
+        cin>>day;
+        if (day > 0 && day <=31 )
+        {
+            cout << "good number" << endl;
+        }
+        else
+        {
+            //string here;
+            cout << "bad number " << endl;
+            string out;
+            cin >> out;
+            break;
+        }
+        cout << "alright "<<name<<" we got your birthday, are you ready?"<< endl;
+        cout << "enter 1 to see your birthday " << endl;
+        char option1;
+        cin >> option1;
+        if (option1 == '1') 
+        {
+          //  int birthday;
+            int user_year;
+            int user_month;
+            int user_day;
+            if (Real_year == year && Real_month == month && Real_day == day)
+            {
+                user_year = year;
+                user_month = month;
+                user_day = day;
+                cout << "here ur birthday = " << user_year << " - " << user_month << " - " << user_day << endl;
+            }
+            ////////////////////////
+            else if (Real_year != year && Real_month == month && Real_day == day)
+            {
+                user_year = Real_year - year;
+                if (user_year < 0) { user_year = year - Real_year; }
+                user_month = month;
+                user_day = day;
+                cout << "here ur birthday = " << user_year << " - " << user_month << " - " << user_day << endl;
+            }
+            /////////////////////////
+            else if (Real_year != year && Real_month != month && Real_day == day)
+            {
+                user_year = Real_year - year;
+                if (user_year < 0) { user_year = year - Real_year; }
+                user_month = Real_month - month;
+                if (user_month < 0) { user_month = month - Real_month; }
+                user_day = day;
+                cout << "here ur birthday = " << user_year << " - " << user_month << " - " << user_day << endl;
+            }
+            //////////////////
+            else if (Real_year != year && Real_month == month && Real_day != day)
+            {
+                user_year = Real_year - year;
+                if (user_year < 0) { user_year = year - Real_year; }
+                user_month = month;
+                user_day = Real_day - day;
+                if (user_day < 0) { user_day = day - Real_day; }
+                cout << "here ur birthday = " << user_year << " - " << user_month << " - " << user_day << endl;
+            }
+            ////////////////////////////    MONTH       ///////////////////////////////////////////
+             else if (Real_year == year && Real_month != month && Real_day == day)
+            {
+                user_year =  year;
+                user_month = Real_month - month;
+                if (user_month < 0) { user_month = month - Real_month; }
+                user_day = day;
+                cout << "here ur birthday = " << user_year << " - " << user_month << " - " << user_day << endl;
+            }
+            /////////////////////////
+            else if (Real_year == year && Real_month != month && Real_day != day)
+            {
+                user_year =  year;
+                user_month = Real_month - month;
+                if (user_month < 0) { user_month = month - Real_month; }
+                user_day = Real_month - day;
+                if (user_day < 0) { user_day = day - Real_day; }
+                cout << "here ur birthday = " << user_year << " - " << user_month << " - " << user_day << endl;
+            }
+            ////////////////////////////    DAY       ///////////////////////////////////////////
+            else if (Real_year == year && Real_month == month && Real_day != day)
+            {
+                user_year =  year;
+                user_month = month;
+                user_day = Real_day - day;
+                if (user_day < 0) { user_day = day - Real_day; }
+                cout << "here ur birthday = " << user_year << " - " << user_month << " - " << user_day << endl;
+            }
+
+            else
+            {
+                
+
+                    cout << "im here also";
+                    user_year = Real_year - year;
+                    if (user_year < 0) { user_year = year - Real_year; }
+
+                    user_month = Real_month - month;
+                    if (user_month < 0) { user_month = month - Real_month; }
+
+                    user_day = Real_day - day;
+                    if (user_day < 0) { user_day = day - Real_day; }
+                    //  birthday = user_year || user_month || user_day;
+                    cout << "here ur birthday = " << user_year << " - " << (char)user_month << " - " << user_day << endl;
+                    break;
+                 
+             }
+        }
+        break;
+
+        default:
+            cout<< "inviald number"<<endl;
+    }
+
+    }
+
+void Fun2()
+{
+
+        cout << "Hi "<<name<<" i am  a Calculator created by jello \n";
+        int index = 1;
+        int close = 0;
+        while (index != close)
+        {
+
+            char a;
+            int b;
+            int c;
+            int d;
+            cout << "\t \t \t \t Welcome " << name << " to a Simple calculator created by jello\n ";
+            cout << "Please select a Mode you want below\n ";
+            cout << "1.smart mode \n";
+            cout << " 2.basic mode \n";
+            cout << " 3.Exit \n";
+            cin >> a;
+            if (a == '1') {
+                double num1;
+                double num2;
+                char op;
+
+                double result;
+              //  char checker;
+
+                cout << "welcome to the smart mode calculator , please enter your operation down below\n ";
+                cout << "For Example type 1 + 1 and then press enter to get the result\n ";
+                cin >> num1 >> op >> num2;
+                if (op == 'a')
+                {
+                    cout << "ADD\n";
+                    result = num1 + num2;
+                    cout << num1 << " + " << num2 << " = " << result << endl;
+
+                }
+                else if (op == '*')
+                {
+                    cout << "multiply\n";
+                    result = num1 * num2;
+                    cout << num1 << " x " << num2 << " = " << result << endl;
+                }
+
+
+                else if (op == 'x')
+                {
+                    cout << "multiply\n";
+                    result = num1 * num2;
+                    cout << num1 << " x " << num2 << " = " << result << endl;
+                }
+
+
+
+                else if (op == '-')
+                {
+
+
+                    cout << "SUB\n";
+                    result = num1 - num2;
+                    cout << num1 << " - " << num2 << " = " << result << endl;
+                }
+
+
+
+
+                else if (op == '/')
+                {
+                    cout << "Divide\n";
+                    result = num1 / num2;
+                    cout << num1 << " / " << num2 << " = " << result << endl;
+                }
+                else
+                {
+                    cout << "dont mess with me";
+                }
+            }
+
+
+
+
+
+
+
+
+            else if (a == '2')
+            {
+
+                char b;
+
+                cout << "Please select a Function you want below\n ";
+                cout << "1.ADD \n";
+                cout << " 2.SUB \n";
+                cout << " 3.Multiply\n ";
+                cout << "4.Divide\n ";
+                cin >> b;
+
+
+                if (b == '1')
+                {
+                    double num1, num2, C;
+                    cout << "You Selected ADD Function ";
+                    cout << "please enter the first number below" << endl;
+                    cin >> num1;
+                    cout << "please enter the second number below" << endl;
+                    cin >> num2;
+                    C = Add(num1, num2);
+                    //   add = num1 + num2;
+                    cout << num1 << " + " << num2 << " = " << C;
+                }
+                else if (b == '2')
+                {
+                    double num1, num2, C;
+                    cout << "You Selected SUB Function ";
+
+                    cout << "please enter the first number below" << endl;
+                    cin >> num1;
+                    cout << "please enter the second number below" << endl;
+                    cin >> num2;
+                    C = SUB(num1, num2);
+                    cout << num1 << " - " << num2 << " = " << C;
+                }
+                else if (b == '3')
+                {
+                    double num1, num2, C;
+                    cout << "You Selected multiply Function ";
+
+                    cout << "please enter the first number below" << endl;
+                    cin >> num1;
+                    cout << "please enter the second number below" << endl;
+                    cin >> num2;
+                    C = Multiply(num1, num2);
+
+                    cout << num1 << " x " << num2 << " = " << C;
+                }
+                else if (b == '4')
+                {
+                    double num1, num2, C;
+                    cout << "You Selected Divide Function ";
+
+                    cout << "please enter the first number below" << endl;
+                    cin >> num1;
+                    cout << "please enter the second number below" << endl;
+                    cin >> num2;
+                    C = Divide(num1, num2);
+
+                    cout << num1 << " / " << num2 << " = " << C;
+                }
+                else
+                {
+                    cout << "something went wrong try again ";
+
+                }
+
+            }
+
+            else if (a == '3')
+
+            {
+                close = 1;
+            }
+            else
+            {
+                cout << "something went wrong try again ";
+
+            }
+        }
+
+}
+
+
+int main()
+{
+    cout << "hi its anther program created by jello" << endl;
+    cout << "would u like to tell me ur name" << endl;
+    getline(cin, name);
+    cout << "wellcome " << name << endl;
+    for (int i = 0; i == 0;)
+    {
+     cout << "Select 1 or 2  below" << endl;
+     cout << "1.i want to know my age" << endl;
+     cout << "2.Run A Calculator" << endl;
+
+        char selection;
+        cin >> selection;
+        if (selection == '1')
+        {
+            Fun1();
+        }
+        else if (selection == '2')
+        {
+            Fun2();
+        }
+        else if (selection == '3')
+        {
+            cout << " write anything to close " << endl;
+            ++i;
+        }
+        else {
+            cout << "im in else section " << endl; 
+            ++i;
+        }
+    }
+
+    cout << "im out the function" << endl;
+    return 0;
+}
